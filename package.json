@@ -1,0 +1,12 @@
+{
+  "name": "noteforge-workspace",
+  "private": true,
+  "description": "Opens the real app in the Notepad--main subfolder (run npm here if your terminal is one level up)",
+  "scripts": {
+    "postinstall": "npm --prefix Notepad--main install",
+    "start": "npm --prefix Notepad--main run start",
+    "dev": "npm --prefix Notepad--main run dev",
+    "build": "npm --prefix Notepad--main run build",
+    "install:app": "npm --prefix Notepad--main install"
+  }
+}

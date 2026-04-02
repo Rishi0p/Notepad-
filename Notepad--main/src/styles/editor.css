@@ -1,0 +1,127 @@
+/* CodeMirror container */
+.editor-wrapper {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  background: var(--bg-code);
+}
+
+.editor-wrapper .cm-editor {
+  height: 100%;
+  font-family: var(--font-mono) !important;
+  font-size: var(--editor-font-size) !important;
+}
+
+.editor-wrapper .cm-editor.cm-focused {
+  outline: none;
+}
+
+/* Gutter */
+.editor-wrapper .cm-gutters {
+  background: var(--bg-primary) !important;
+  border-right: 1px solid var(--bg-border) !important;
+  color: var(--text-faint) !important;
+  min-width: 48px;
+}
+
+.editor-wrapper .cm-gutter .cm-gutterElement {
+  padding: 0 8px 0 12px;
+}
+
+.editor-wrapper .cm-activeLineGutter {
+  background: rgba(255, 255, 255, 0.03) !important;
+  color: var(--text-muted) !important;
+}
+
+/* Content */
+.editor-wrapper .cm-content {
+  font-family: var(--font-mono) !important;
+  font-size: var(--editor-font-size) !important;
+  padding: 16px 0 !important;
+  caret-color: var(--color-info);
+}
+
+.editor-wrapper .cm-line {
+  padding: 0 16px !important;
+  line-height: 1.7 !important;
+}
+
+/* Active line */
+.editor-wrapper .cm-activeLine {
+  background: rgba(255, 255, 255, 0.03) !important;
+}
+
+/* Selection */
+.editor-wrapper .cm-selectionBackground {
+  background: rgba(103, 232, 249, 0.15) !important;
+}
+
+.editor-wrapper .cm-editor.cm-focused .cm-selectionBackground {
+  background: rgba(103, 232, 249, 0.15) !important;
+}
+
+/* Cursor */
+.editor-wrapper .cm-cursor {
+  border-left-color: var(--color-info) !important;
+  border-left-width: 2px !important;
+}
+
+/* Matched brackets */
+.editor-wrapper .cm-matchingBracket {
+  background: rgba(103, 232, 249, 0.2) !important;
+  outline: 1px solid rgba(103, 232, 249, 0.4);
+  color: var(--color-info) !important;
+}
+
+/* Fold gutter */
+.editor-wrapper .cm-foldGutter .cm-gutterElement {
+  color: var(--text-faint);
+  cursor: pointer;
+}
+
+.editor-wrapper .cm-foldGutter .cm-gutterElement:hover {
+  color: var(--text-muted);
+}
+
+/* Tooltip / autocomplete */
+.cm-tooltip {
+  background: var(--bg-surface) !important;
+  border: 1px solid var(--bg-border) !important;
+  border-radius: 6px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+}
+
+.cm-tooltip-autocomplete ul li {
+  padding: 4px 8px !important;
+  color: var(--text-primary) !important;
+}
+
+.cm-tooltip-autocomplete ul li[aria-selected] {
+  background: rgba(103, 232, 249, 0.1) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Search highlights */
+.cm-searchMatch {
+  background: rgba(251, 191, 36, 0.25) !important;
+  outline: 1px solid rgba(251, 191, 36, 0.4);
+}
+
+.cm-searchMatch-selected {
+  background: rgba(103, 232, 249, 0.4) !important;
+  outline: 1px solid rgba(103, 232, 249, 0.6);
+}
+
+/* Fold placeholder */
+.cm-foldPlaceholder {
+  background: var(--bg-border) !important;
+  border: none !important;
+  color: var(--text-muted) !important;
+  padding: 0 6px !important;
+  border-radius: 3px !important;
+}
+
+/* Panels (built-in search panel — hidden, we use custom) */
+.cm-panels {
+  display: none !important;
+}

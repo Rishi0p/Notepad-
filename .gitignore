@@ -1,0 +1,4 @@
+# Root-level (if any)
+node_modules/
+.DS_Store
+Thumbs.db

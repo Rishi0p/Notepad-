@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Roboto+Mono:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-primary   : #1a1a1a;
+  --bg-code      : #0d0d0d;
+  --bg-surface   : #212121;
+  --bg-border    : #2e2e2e;
+  --text-primary : #ececec;
+  --text-muted   : #a0a0a0;
+  --text-faint   : #6b6b6b;
+  --color-success  : #4ade80;
+  --color-error    : #f87171;
+  --color-info     : #67e8f9;
+  --color-warning  : #fbbf24;
+  --color-accent   : #c084fc;
+  --color-orange   : #fb923c;
+  --syntax-keyword  : #c084fc;
+  --syntax-string   : #4ade80;
+  --syntax-number   : #fb923c;
+  --syntax-comment  : #6b6b6b;
+  --syntax-function : #67e8f9;
+  --syntax-variable : #ececec;
+  --editor-font-size: 14px;
+  --font-ui: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: rgba(103, 232, 249, 0.25);
+  color: var(--text-primary);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3e3e3e;
+}
+
+/* App Layout */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Drag region for macOS title bar */
+.drag-region {
+  -webkit-app-region: drag;
+}
+
+.no-drag {
+  -webkit-app-region: no-drag;
+}
+
+/* Toast notification */
+.toast {
+  position: fixed;
+  bottom: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: 20px;
+  padding: 6px 16px;
+  color: var(--color-warning);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  z-index: 1000;
+  animation: toastIn 0.2s ease-out, toastOut 0.3s ease-in 0.9s forwards;
+  pointer-events: none;
+}
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+@keyframes toastOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* Focus styles */
+input:focus-visible,
+button:focus-visible {
+  outline: 1px solid var(--color-info);
+  outline-offset: 1px;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
